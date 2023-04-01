@@ -6,5 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pwaOffline';
+  title = 'pwaoffline';
+  years:any = [];
+
+  constructor() {
+    console.log("****************");
+
+    this.snippets();
+  }
+
+
+  snippets() {
+
+    let date = new Date();
+
+    console.log(date.getFullYear());
+
+    for (let y: any = date.getFullYear(); y >= date.getFullYear() - 4; y--) {
+      console.log(y);
+
+      this.years.push(y);
+    }
+    console.log(this.years)
+  }
+
 }
